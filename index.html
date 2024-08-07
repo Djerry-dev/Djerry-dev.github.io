@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Só Novidades</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> 
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+  <body>
+    <article class="container">
+      <nav class="nav">
+        <div class="cont-logo">
+          <img id="logo" src="./Icones/logoB.jpg" alt="Só Novidades">
+        </div>
+        <div class="sub">
+          <div class="topo">
+            <div class="tpItem hm">
+              <i class="fas fa-home fa-4x mb-3 des"></i>
+              <a href="" class="tp">Home</a>
+            </div>
+            <div class="tpItem hm">
+              <i class="fas fa-heart fa-4x mb-3 des"></i>
+              <a href="" class="tp">Lista de Favoritos (0)</a>
+            </div>
+            <div class="tpItem hm">
+              <i class="fas fa-shopping-cart fa-4x mb-3 des"></i>
+              <a onclick="carrinhoCompra ()" class="tp">Carinho de Compras</a>
+            </div>
+            <div onclick="carrinhoCompra ()" class="tpItProd">
+              <label id="tpItProd"><span>0</span> Iten(s) - <span id="vtotal">0.00</span>MZN </label><i id="ictpItProd" class="fas fa-shopping-cart fa-4x mb-3 des"></i>
+
+            </div>
+          </div>
+          <div class="medio">
+            <span id="boas">Seja bem vindo ao Só Novidades</span>
+            <div class="pesquisa">
+              <img id="ipes" src="./Icones/seach.png" alt="">
+              <input type="search" name="" id="pesquisa" placeholder="Procure um produto específico">
+            </div>
+          </div>
+          <div class="baixo">
+            <a href="" class="cat">Fashion</a>
+            <a href="" class="cat">Electrónicos</a>
+            <a href="" class="cat">Acessórios</a>
+            <a href="" class="cat">Calsados</a>
+            <a href="" class="cat">Mais</a>
+          </div>
+        </div>
+      </nav>
+          <div class="bxi">
+            <a href="" class="cat">Fashion</a>
+            <a href="" class="cat">Electrónicos</a>
+            <a href="" class="cat">Acessórios</a>
+            <p href="" id="menuS" class="cat">Mais</p>
+          </div>
+      
+      <aside id="banner">
+        <img src="./Icones/banner.jpg" id="ban" alt="">
+        <div id="bann">
+          <img class="bann" src="./Icones/combinacao.jpg" alt="">
+          <img class="bann" src="./Icones/sapatos.jpg" alt="">
+          <img class="bann" src="./Icones/relogio.jpg" alt="">
+        </div>
+      </aside>
+      <div class="distr">
+        <strong>Compre e receba o seu produto na sua cidade ou distrito. </strong>
+      </div>
+      
+      <aside class="geral">
+        <section class="prod">
+          <nav class="princ">
+            <a href="" class="mnpri ativo">Todos</a>
+            <a href="" class="mnpri">Novidades</a>
+            <a href="" class="mnpri">Ofertas Especiais</a>
+            <a href="" class="mnpri">Mais Comprados</a>
+          </nav>
+          <div class="prodt" id="prodt">
+
+          </div>
+        </section>
+        
+        <section id="testm" class="testm">
+          <p class="categorie">CATEGORIA</p>
+          <div class="cats">
+            <section class="cate" style="border: none">
+              <span class="m">></span>
+              <p class="l"> Electrónicos </p>
+              <span class="a">+</span>
+            </section>
+            <section class="cate">
+              <span class="m">></span>
+              <p class="l"> Fashion </p>
+              <span class="a">+</span>
+            </section>
+            <section class="cate">
+              <span class="m">></span>
+              <p class="l"> Calsados </p>
+              <span class="a">+</span>
+            </section>
+            <section class="cate">
+              <span class="m">></span>
+              <p class="l"> Acessórios </p>
+              <span class="a">+</span>
+            </section>
+          </div>
+          <br />
+          <p class="categorie">NOVIDADES</p>
+          <div id="info">
+            <label>Descubra o seu estilo único com a nossa coleção exclusiva de vestuários, sapatos e acessórios!
+              Deixe a sua personalidade brilhar com as últimas tendências em moda, desde os clássicos atemporais até as peças mais ousadas e modernas. Com entrega domiciliar rápida e segura, você pode renovar o seu guarda-roupa sem sair de casa. Explore agora e deixe a sua marca na moda!</label>
+          </div>
+          <br>
+          <p class="categorie">TESTIMONIAL</p>
+          <section class="testimonial-section">
+            <div class="testimonial-container">
+              <div class="testimonial">
+                <p class="message">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+                <p class="author">- Joana</p>
+              </div>
+              <div class="testimonial">
+                <p class="message">"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"</p>
+                <p class="author">- Marcos</p>
+              </div>
+              <div class="testimonial">
+                <p class="message">"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"</p>
+                <p class="author">- Marcos</p>
+              </div>
+              <!-- Outros depoimentos aqui -->
+            </div>
+            <div class="add-testimonial">
+              <h3>Deixe o seu depoimento</h3>
+              <form>
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+              </form>
+            </div>
+          </section>
+
+        </section>
+        
+        
+      </aside>
+      <aside id="carinho" class="carinho">
+        <div class="comprar">
+          <a id="but" style="display: none" href=""></a>
+          <span href="" class="bys" id="buy">Compar Agora</span>
+          <span onclick="escolher ()" class="bys" href="" id="more">Escolher Mais </span>
+          <span onclick="fechar ()" href="" id="close">x</span>
+        </div>
+        <div class="proprietario">
+          <p id="prp">Fale com o proprietário através dos seguintes meios: </p>
+          <div id="social">
+            <a href=""><i class="fab fa-facebook fa-4x mb-3 as"></i></a>
+          <a href="https://wa.me/258871586297?text=Ol%C3%A1%20eu%20gostaria%20de%20saber%20mais%20sobre%20seus%20produtos%20%C3%A0%20venda.">
+  <i class="fab fa-whatsapp fa-4x mb-3 as"></i>
+</a>
+
+
+            <a href=""><i class="fab fa-instagram fa-4x mb-3 as"></i></a>
+          </div>
+        </div>
+
+      </aside>
+      
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

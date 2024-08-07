@@ -1,0 +1,18 @@
+Aqui estão os ícones para Facebook, WhatsApp e Instagram usando as classes do Font Awesome:
+
+1. Ícone do Facebook:
+```html
+<i class="fab fa-facebook fa-4x mb-3 des"></i>
+```
+
+2. Ícone do WhatsApp:
+```html
+<i class="fab fa-whatsapp fa-4x mb-3 des"></i>
+```
+
+3. Ícone do Instagram:
+```html
+<i class="fab fa-instagram fa-4x mb-3 des"></i>
+```
+
+Você pode usar essas classes em seu HTML para exibir os ícones correspondentes em seu aplicativo ou website.

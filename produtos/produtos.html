@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .alert {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adicionar Produtos</h1>
+    <label for="quantidade">Quantidade de Produtos:</label>
+    <input type="number" id="quantidade" min="1" onchange="criarFormularios()">
+    <div id="formularios"></div>
+    <button onclick="submeter()">Submeter</button>
+    <div id="mensagem"></div>
+  </div>
+
+  <script>
+    function criarFormularios() {
+      const quantidade = document.getElementById('quantidade').value;
+      const formularioContainer = document.getElementById('formularios');
+      formularioContainer.innerHTML = '';
+
+      for (let i = 1; i <= quantidade; i++) {
+        const formulario = `
+          <form id="produto${i}">
+            <label for="nome${i}">Nome do Produto:</label>
+            <input type="text" id="nome${i}" name="nome${i}" required>
+
+            <label for="categoria${i}">Categoria:</label>
+            <select id="categoria${i}" name="categoria${i}" required>
+              <option value="">Selecione</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Acessórios">Acessórios</option>
+              <option value="Electrónicos">Electrónicos</option>
+              <option value="Calçados">Calçados</option>
+              <option value="Outros">Outros</option>
+            </select>
+
+            <label for="precoAnterior${i}">Preço Anterior:</label>
+            <input type="number" id="precoAnterior${i}" name="precoAnterior${i}" min="0" required>
+
+            <label for="precoAtual${i}">Preço Atual:</label>
+            <input type="number" id="precoAtual${i}" name="precoAtual${i}" min="0" required>
+
+            <label for="imagem${i}">Imagem:</label>
+            <input type="file" id="imagem${i}" name="imagem${i}" accept="image/*" onchange="previsualizarImagem(${i})">
+            <img id="previsualizacao${i}" src="#" alt="Pré-visualização da Imagem" style="display: none; width: 100%; margin-top: 10px;">
+
+          </form>
+        `;
+        formularioContainer.innerHTML += formulario;
+      }
+    }
+
+    function previsualizarImagem(numero) {
+      const imagemInput = document.getElementById(`imagem${numero}`);
+      const imagemPrevisualizacao = document.getElementById(`previsualizacao${numero}`);
+
+      if (imagemInput.files && imagemInput.files[0]) {
+        const leitor = new FileReader();
+
+        leitor.onload = function(e) {
+          imagemPrevisualizacao.style.display = 'block';
+          imagemPrevisualizacao.src = e.target.result;
+        }
+
+        leitor.readAsDataURL(imagemInput.files[0]);
+      }
+    }
+
+    function submeter() {
+      const quantidade = document.getElementById('quantidade').value;
+      const dadosFormularios = [];
+
+      for (let i = 1; i <= quantidade; i++) {
+        const formulario = document.getElementById(`produto${i}`);
+        const dados = {
+          nome: formulario['nome' + i].value,
+          categoria: formulario['categoria' + i].value,
+          precoAnterior: formulario['precoAnterior' + i].value,
+          precoAtual: formulario['precoAtual' + i].value,
+          imagem: formulario['imagem' + i].value // Aqui você pode pegar a URL da imagem ou o arquivo em si, dependendo do que deseja fazer com ele
+        };
+        dadosFormularios.push(dados);
+      }
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost:8080/produtos/inserir.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          const resposta = JSON.parse(xhr.responseText);
+          mostrarMensagem(resposta);
+        } else {
+          console.error('Erro ao enviar requisição.');
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Erro de conexão.');
+      };
+      xhr.send(JSON.stringify(dadosFormularios));
+    }
+
+    function mostrarMensagem(resposta) {
+      const mensagemContainer = document.getElementById('mensagem');
+      mensagemContainer.innerHTML = '';
+
+      const alerta = document.createElement('div');
+      alerta.classList.add('alert');
+      if (resposta.status === 'sucesso') {
+        alerta.classList.add('alert-success');
+        alerta.textContent = resposta.mensagem;
+      } else {
+        alerta.classList.add('alert-danger');
+        alerta.textContent = resposta.mensagem;
+      }
+
+      mensagemContainer.appendChild(alerta);
+    }
+  </script>
+</body>
+</html>
