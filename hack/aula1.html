@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: Instalando e Usando o Zpisher - Jeremy Hack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card, .alert {
+            background-color: #1c1c1c;
+            color: #00ff00;
+            border: 1px solid #333;
+        }
+        .btn-primary {
+            background-color: #00aaff;
+            border-color: #00aaff;
+        }
+        .btn-primary:hover {
+            background-color: #0088cc;
+            border-color: #0088cc;
+        }
+        pre {
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            position: relative;
+        }
+        code {
+            color: #00ff00;
+        }
+        .section-title {
+            border-bottom: 2px solid #00aaff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #00aaff;
+            border: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .copy-btn:hover {
+            background: #0088cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Aula: Instalando e Usando o Zpisher</h1>
+        
+        <div class="mb-4">
+            <h2 class="section-title">Descrição</h2>
+            <p>O <strong>Zpisher</strong> é uma ferramenta de phishing que permite criar páginas falsas para capturar informações de login e outros dados sensíveis. É essencial usar esta ferramenta com responsabilidade e somente para fins educacionais e testes autorizados.</p>
+        </div>
+        
+        <div class="mb-4">
+            <h2 class="section-title">Instalação do Zpisher</h2>
+            <p>Para instalar o Zpisher, siga os passos abaixo:</p>
+            <div class="highlight">
+                <p>1. Abra o terminal em seu sistema.</p>
+                <p>2. Clone o repositório do Zpisher com o seguinte comando:</p>
+                <pre><code id="code1">git clone https://github.com/username/zpisher.git</code>
+                    <button class="copy-btn" onclick="copyToClipboard('#code1')"><i class="fas fa-copy"></i> Copiar</button>
+                </pre>
+                <p>3. Navegue até o diretório do Zpisher:</p>
+                <pre><code id="code2">cd zpisher</code>
+                    <button class="copy-btn" onclick="copyToClipboard('#code2')"><i class="fas fa-copy"></i> Copiar</button>
+                </pre>
+                <p>4. Instale as dependências necessárias com:</p>
+                <pre><code id="code3">pip install -r requirements.txt</code>
+                    <button class="copy-btn" onclick="copyToClipboard('#code3')"><i class="fas fa-copy"></i> Copiar</button>
+                </pre>
+                <p>5. Execute o Zpisher com o seguinte comando:</p>
+                <pre><code id="code4">python zpisher.py</code>
+                    <button class="copy-btn" onclick="copyToClipboard('#code4')"><i class="fas fa-copy"></i> Copiar</button>
+                </pre>
+            </div>
+        </div>
+        
+        <div class="mb-4">
+            <h2 class="section-title">Usando o Zpisher</h2>
+            <p>Após a instalação, você pode começar a usar o Zpisher para criar e gerenciar suas páginas de phishing.</p>
+            <div class="highlight">
+                <p>1. Inicie o Zpisher:</p>
+                <pre><code id="code5">python zpisher.py</code>
+                    <button class="copy-btn" onclick="copyToClipboard('#code5')"><i class="fas fa-copy"></i> Copiar</button>
+                </pre>
+                <p>2. Escolha um template para sua página de phishing.</p>
+                <p>3. Configure o template com as informações necessárias (URL de redirecionamento, campos de captura, etc.).</p>
+                <p>4. Inicie o servidor e obtenha o link para sua página.</p>
+            </div>
+        </div>
+        
+        <div class="alert alert-info">
+            <h4>Nota Importante</h4>
+            <p>Use o Zpisher com responsabilidade. Realize testes somente em ambientes controlados e com permissão adequada. O uso indevido de ferramentas de phishing pode resultar em graves consequências legais.</p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(selector) {
+            const code = document.querySelector(selector).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Código copiado para a área de transferência!');
+            }).catch(err => {
+                alert('Erro ao copiar o código: ' + err);
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

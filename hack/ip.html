@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizador de IP - Jeremy Hack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Localizador de IP</h2>
+        <p>Insira um domínio para descobrir o IP associado.</p>
+        <div class="input-group mb-3">
+            <input type="text" id="domainInput" class="form-control" placeholder="Exemplo: google.com">
+            <button class="btn btn-primary" onclick="findIP()">Buscar IP</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function findIP() {
+            const domain = document.getElementById('domainInput').value;
+            fetch(`https://api.ipify.org?domain=${domain}&format=json`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = `<p>O IP do domínio ${domain} é ${data.ip}</p>`;
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = `<p>Erro ao buscar o IP. Tente novamente.</p>`;
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>

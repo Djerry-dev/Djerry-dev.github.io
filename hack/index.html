@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeremy Hack - Aprenda Hacking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .hero {
+            background-image: url('banner.jpg'); /* Substitua pela URL da sua imagem de fundo */
+            background-size: cover;
+            color: #0f0;
+            text-align: center;
+            padding: 150px 0;
+        }
+        .card {
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s;
+        }
+        .navbar {
+            background-color: #0d0d0d;
+        }
+        .nav-link {
+            color: #0f0 !important;
+        }
+        .nav-link:hover {
+            color: #00ff00 !important;
+        }
+        .footer {
+            background-color: #0d0d0d;
+            color: #0f0;
+        }
+        .btn-primary {
+            background-color: #00aaff;
+            border-color: #00aaff;
+        }
+        .btn-primary:hover {
+            background-color: #0088cc;
+            border-color: #0088cc;
+        }
+        .svg-icon {
+            fill: #00ff00;
+            width: 100px;
+            height: 100px;
+        }
+        .progress-bar {
+            background-color: #00ff00;
+        }
+        .testimonial {
+            background-color: #1c1c1c;
+            border: 1px solid #333;
+        }
+        .faq-item {
+            border-bottom: 1px solid #333;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Jeremy Hack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aulas">Aulas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ferramentas">Ferramentas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Bem-vindo ao Jeremy Hack</h1>
+            <p>Aprenda Hacking de maneira prática e objetiva.</p>
+            <a href="#aulas" class="btn btn-primary btn-lg">Comece Agora</a>
+        </div>
+    </section>
+
+    <!-- Aulas Destaques -->
+    <section class="py-5" id="aulas">
+        <div class="container">
+            <h2 class="text-center mb-4">Destaques das Aulas</h2>
+            <div id="carouselAulas" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/20190221124327.jpg" class="card-img-top" alt="Aula 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Introdução ao Hacking</h5>
+                                        <p class="card-text">Aprenda os conceitos básicos de hacking.</p>
+                                        <a href="https://segredo.dev/introducao-web-hacking/" target="_blank" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/social-engineering-protect-password-identity-765x422-1.jpg" target="_blank" class="card-img-top" alt="Aula 2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Engenharia Social</h5>
+                                        <p class="card-text">Descubra como explorar a psicologia humana.</p>
+                                        <a href="https://cursa.app" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/pentesting.jpg" class="card-img-top" alt="Aula 3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pentesting</h5>
+                                        <p class="card-text">Teste a segurança de sistemas com técnicas avançadas.</p>
+                                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.ironhack.com/pt/blog/o-que-e-e-como-comecar-no-pentesting&ved=2ahUKEwjd_JSUtf-HAxWvZkEAHSJPNAMQFnoECC0QAQ&usg=AOvVaw1wTxnJN5Gb0snUBG7awGqF" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/Web_Application_HS_Cover-scaled.jpg" class="card-img-top" alt="Aula 4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hacking Web</h5>
+                                        <p class="card-text">Saiba como invadir aplicativos web.</p>
+                                        <a href="https://www.hacker101.com" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/2345384_5ad3_8.jpg" class="card-img-top" alt="Aula 5">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hacking de Redes</h5>
+                                        <p class="card-text">Explore técnicas para atacar redes.</p>
+                                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://pt.wikibooks.org/wiki/Guia_do_hacker/Redes:_uma_vis%25C3%25A3o_geral&ved=2ahUKEwjR9Lnftf-HAxUkQEEAHa0oBGUQFnoECCIQAQ&usg=AOvVaw08_6tVVF4G1PcYcef1i6F-" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="img/1691070719935.jpeg" class="card-img-top" alt="Aula 6">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Análise Forense</h5>
+                                        <p class="card-text">Entenda como investigar crimes cibernéticos.</p>
+                                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.gta.ufrj.br/grad/06_2/alexandre/index.html&ved=2ahUKEwig446ftv-HAxVkTkEAHexVKlwQFnoECCEQAQ&usg=AOvVaw3nVUC9Sxirflqqddzgh9UV" class="btn btn-primary">Acessar Aula</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controles do Carrossel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAulas" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAulas" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas -->
+    <section class="py-5 bg-dark" id="ferramentas">
+        <div class="container">
+            <h2 class="text-center mb-4">Ferramentas Internas</h2>
+            <div class="row">
+                <!-- Card de Ferramenta -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/tracker-hero.jpg" class="card-img-top" alt="Ferramenta IP">
+                        <div class="card-body">
+                            <h5 class="card-title">Localizador de IP</h5>
+                            <p class="card-text">Descubra o IP de um domínio.</p>
+                            <a href="iptool.html" class="btn btn-primary">Acessar Ferramenta</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- Card de Ferramenta -->
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="img/google-hacking-hacker-hackersec-min.png" class="card-img-top" alt="Ferramenta de Busca">
+                        <div class="card-body">
+                            <h5 class="card-title">Busca de Nome</h5>
+                            <p class="card-text">Encontre informações sobre pessoas na web.</p>
+                            <a href="searchtool.html" class="btn btn-primary">Acessar Ferramenta</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card de Ferramenta -->
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="img/maxresdefault-3-1.jpg" class="card-img-top" alt="Ferramenta WhatsApp">
+                        <div class="card-body">
+                            <h5 class="card-title">Envio de Mensagem no WhatsApp</h5>
+                            <p class="card-text">Envie mensagens diretamente para o WhatsApp.</p>
+                            <a href="whatsapptool.html" class="btn btn-primary">Acessar Ferramenta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Barra de Progresso -->
+    <section class="py-5" id="progresso">
+        <div class="container">
+            <h2 class="text-center mb-4">Progresso dos Cursos</h2>
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+            </div>
+            <div class="progress mb-3">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Depoimentos -->
+    <section class="py-5 bg-dark text-light" id="depoimentos">
+        <div class="container">
+            <h2 class="text-center mb-4">O que nossos alunos dizem</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial p-4">
+                        <p>"A plataforma Jeremy Hack foi essencial para meu desenvolvimento na área de segurança cibernética. As aulas são claras e práticas."</p>
+                        <footer class="blockquote-footer">João Silva</footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial p-4">
+                        <p>"Recomendo a Jeremy Hack para quem deseja aprender hacking de maneira profissional. As ferramentas são muito úteis."</p>
+                        <footer class="blockquote-footer">Maria Oliveira</footer>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial p-4">
+                        <p>"Os cursos são muito bem estruturados e os instrutores são experientes. Uma excelente plataforma de aprendizado."</p>
+                        <footer class="blockquote-footer">Carlos Souza</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Painel de Informações -->
+    <section class="py-5" id="informacoes">
+        <div class="container">
+            <h2 class="text-center mb-4">Painel de Informações</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Número de Aulas</h5>
+                            <p class="card-text">15</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Ferramentas Disponíveis</h5>
+                            <p class="card-text">5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Instrutores</h5>
+                            <p class="card-text">10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: FAQ -->
+    <section class="py-5 bg-dark text-light" id="faq">
+        <div class="container">
+            <h2 class="text-center mb-4">Perguntas Frequentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            O que é Jeremy Hack?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Jeremy Hack é uma plataforma de aprendizado dedicada ao hacking ético e segurança cibernética.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Como posso acessar as aulas?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Você pode acessar as aulas diretamente através do menu de navegação ou na seção de Destaques das Aulas.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item faq-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Existe algum custo para usar a plataforma?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Não, a plataforma oferece muitos recursos e aulas gratuitamente. Algumas ferramentas podem ter recursos adicionais pagos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section class="py-5" id="sobre">
+        <div class="container">
+            <h2 class="text-center mb-4">Sobre Jeremy Hack</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Jeremy Hack é uma plataforma dedicada ao ensino de hacking ético e segurança cibernética. Aqui, você encontrará aulas detalhadas e ferramentas práticas para desenvolver suas habilidades.</p>
+                    <p>Nosso objetivo é fornecer um ambiente de aprendizado seguro e responsável, onde entusiastas e profissionais possam crescer em suas carreiras na segurança da informação.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <!-- Ícone SVG Hacker -->
+<!-- Seção Sobre (continuação) -->
+                    <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-1.3 0-2.4 1.1-2.4 2.4 0 .9.4 1.8 1.1 2.2v1.6c-1.6.2-2.9 1.3-3.3 2.9h-2.8c-.6-1-1.7-1.7-2.9-1.7-1.8 0-3.2 1.5-3.2 3.2 0 1.8 1.5 3.2 3.2 3.2 1.2 0 2.3-.7 2.9-1.7h2.8c.4 1.6 1.7 2.7 3.3 2.9v1.7c-.7.4-1.1 1.2-1.1 2.1 0 1.3 1.1 2.4 2.4 2.4s2.4-1.1 2.4-2.4c0-.9-.4-1.8-1.1-2.2v-1.7c1.6-.2 2.9-1.3 3.3-2.9h2.8c.6 1 1.7 1.7 2.9 1.7 1.8 0 3.2-1.5 3.2-3.2 0-1.8-1.5-3.2-3.2-3.2-1.2 0-2.3.7-2.9 1.7h-2.8c-.4-1.6-1.7-2.7-3.3-2.9v-1.6c.7-.4 1.1-1.2 1.1-2.2 0-1.3-1.1-2.4-2.4-2.4z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section class="py-5 bg-dark text-light" id="contato">
+        <div class="container">
+            <h2 class="text-center mb-4">Contato</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-3 text-center">
+        <div class="container">
+            <p>&copy; 2024 Jeremy Hack. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

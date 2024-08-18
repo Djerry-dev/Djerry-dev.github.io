@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizador de IP - Jeremy Hack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: #121212;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 15px 5px rgba(0,255,0,0.2);
+            border: 1px solid #00ff00;
+        }
+
+        .btn-primary {
+            background-color: #00ff00;
+            border-color: #00ff00;
+        }
+
+        .btn-primary:hover {
+            background-color: #00cc00;
+            border-color: #00cc00;
+        }
+
+        .navbar {
+            background-color: #1a1a1a;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #00ff00;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-item {
+            background-color: #1a1a1a;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .dropdown-menu {
+            background-color: #1a1a1a;
+            border: 1px solid #00ff00;
+        }
+
+        .footer {
+            background-color: #0d0d0d;
+            border-top: 2px solid #00ff00;
+        }
+
+        .scrollable {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 15px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+        }
+
+        .spinner-border {
+            border-color: #00ff00 transparent #00ff00 transparent;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.4;
+            }
+        }
+
+        .hacker-text {
+            animation: flicker 1.5s infinite alternate;
+        }
+
+        .progress-bar {
+            background-color: #00ff00;
+        }
+
+        .table-hover tbody tr:hover {
+            color: #00ff00;
+            background-color: #1a1a1a;
+        }
+
+        .badge {
+            background-color: #00ff00;
+        }
+
+        .hacker-animation {
+            animation: glitch 1.5s infinite alternate;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: skew(0.05deg);
+            }
+            2% {
+                transform: translate(2px, 0) skew(0.05deg);
+            }
+            4% {
+                transform: translate(-2px, 0) skew(0.05deg);
+            }
+            6% {
+                transform: translate(2px, 0) skew(0.05deg);
+            }
+            8% {
+                transform: translate(-2px, 0) skew(0.05deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand hacker-text" href="#">Jeremy Hack</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ip-locator">Localizador de IP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container text-center hacker-animation mt-5" id="home">
+        <h1>Bem-vindo ao Jeremy Hack</h1>
+        <p>Descubra informações ocultas com estilo hacker.</p>
+        <a href="#ip-locator" class="btn btn-primary btn-lg">Comece Agora</a>
+    </div>
+
+    <!-- IP Locator -->
+    <section class="container mt-5" id="ip-locator">
+        <h2 class="text-center hacker-animation">Localizador de IP</h2>
+        <p class="text-center">Insira um domínio para descobrir o IP associado e outras informações básicas.</p>
+        <div class="input-group mb-3">
+            <input type="text" id="domainInput" class="form-control" placeholder="Exemplo: google.com">
+            <button class="btn btn-primary" onclick="findIP()">Buscar IP</button>
+        </div>
+        <div id="result" class="text-center mt-4">
+            <div class="spinner-border" role="status" id="loadingSpinner" style="display:none;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p id="ipInfo"></p>
+        </div>
+    </section>
+
+    <!-- Carousel -->
+    <section class="container mt-5" id="gallery">
+        <h2 class="text-center hacker-animation">Galeria Hacker</h2>
+        <div id="hackerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/images (1).jpeg" class="d-block w-100" alt="Hacker Image 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Imagem Hacker 1</h5>
+                        <p>Descrição da Imagem Hacker 1.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/images (2).jpeg" class="d-block w-100" alt="Hacker Image 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Imagem Hacker 2</h5>
+                        <p>Descrição da Imagem Hacker 2.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/images.jpeg" class="d-block w-100" alt="Hacker Image 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Imagem Hacker 3</h5>
+                        <p>Descrição da Imagem Hacker 3.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#hackerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#hackerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Scrollable Content -->
+    <section class="container mt-5" id="about">
+        <h2 class="text-center hacker-animation">Sobre Nós</h2>
+        <div class="scrollable">
+            <p>Jeremy Hack é uma plataforma voltada para entusiastas da segurança cibernética e hacking ético. Nós oferecemos uma variedade de ferramentas, aulas, e recursos para aprimorar suas habilidades em segurança digital.</p>
+            <p>Com um foco em educação prática, nosso objetivo é fornecer um ambiente seguro para aprender técnicas avançadas de hacking, ao mesmo tempo que promovemos a ética no uso dessas habilidades.</p>
+        </div>
+    </section>
+
+    <!-- Progress Bars -->
+    <section class="container mt-5">
+        <h2 class="text-center hacker-animation">Nossas Conquistas</h2>
+        <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" style="width: 80%;">Educação 80%</div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" style="width: 65%;">Ferramentas 65%</div>
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" style="width: 90%;">Comunidade 90%</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center py-4 mt-5">
+        <div class="container">
+            <p>© 2024 Jeremy Hack. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function findIP() {
+            const domainInput = document.getElementById('domainInput').value;
+            const resultDiv = document.getElementById('result');
+            const ipInfo = document.getElementById('ipInfo');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            
+            loadingSpinner.style.display = 'inline-block';
+            ipInfo.innerHTML = '';
+
+            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://ipinfo.io/${domainInput}/json`)}`)
+                .then(response => response.json())
+                .then(data => {
+                    loadingSpinner.style.display = 'none';
+                    const result = JSON.parse(data.contents);
+                    if (result.ip) {
+                        ipInfo.innerHTML = `<strong>IP:</strong> ${result.ip}<br>
+                                            <strong>Localização:</strong> ${result.city}, ${result.region}, ${result.country}<br>
+                                            <strong>Org:</strong> ${result.org}`;
+                    } else {
+                        ipInfo.innerHTML = 'Erro ao buscar informações de IP. Verifique o domínio inserido.';
+                    }
+                })
+                .catch(error => {
+                    loadingSpinner.style.display = 'none';
+                    ipInfo.innerHTML = 'Erro ao buscar informações de IP. Verifique o domínio inserido.';
+                });
+        }
+    </script>
+</body>
+</html>
