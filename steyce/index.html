@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Download - Steyce</title>
+    <style>
+      :root {
+        --bg: #0f1720;
+        --card: #0b1220;
+        --accent: #25b366; /* verde estilo WhatsApp */
+        --muted: #94a3b8;
+        --glass: rgba(255, 255, 255, 0.04);
+        --radius: 16px;
+        --maxw: 520px;
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            1200px 400px at 10% 10%,
+            rgba(37, 179, 102, 0.06),
+            transparent 8%
+          ),
+          linear-gradient(180deg, #07101a 0%, #07121b 60%);
+        font-family:
+          var(--font, Inter),
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        color: #e6eef6;
+      }
+
+      .card {
+        width: 100%;
+        max-width: var(--maxw);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          rgba(255, 255, 255, 0.01)
+        );
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow:
+          0 10px 30px rgba(2, 6, 23, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(6px);
+      }
+
+      .header {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        overflow: hidden;
+        flex: 0 0 64px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .meta {
+        flex: 1;
+      }
+
+      .meta h1 {
+        margin: 0;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+      }
+
+      .meta p {
+        margin: 4px 0 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .cover {
+        margin: 18px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--glass);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+      }
+
+      .track-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .track-title {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      .track-sub {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0;
+      }
+
+      .cover-art {
+        width: 84px;
+        height: 84px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.35)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+
+      /* download button styled as anchor */
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        background: linear-gradient(180deg, var(--accent), #1fa65a);
+        color: white;
+        padding: 10px 14px;
+        border-radius: 12px;
+        font-weight: 600;
+        box-shadow: 0 8px 18px rgba(37, 179, 102, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition:
+          transform 0.14s ease,
+          box-shadow 0.14s ease;
+      }
+
+      .btn-download:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 36px rgba(37, 179, 102, 0.16);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        padding: 8px 12px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      .note {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      /* responsive */
+      @media (max-width: 420px) {
+        .cover {
+          grid-template-columns: 1fr;
+        }
+        .cover-art {
+          width: 100%;
+          height: 140px;
+          border-radius: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main" aria-labelledby="title">
+      <div class="header">
+        <div class="avatar" aria-hidden="true">
+          <!-- substitua a src pela foto da Steyce se quiser -->
+          <img src="./steyce.jpg" alt="Avatar Steyce" />
+        </div>
+        <div class="meta">
+          <h1 id="title">Steyce — Download da música</h1>
+          <p>Um clique para baixar a música que você pediu.</p>
+        </div>
+      </div>
+
+      <section class="cover" aria-label="Informações da faixa">
+        <div class="track-info">
+          <p class="track-title" id="trackTitle">Enquanto respirar</p>
+          <p class="track-sub" id="trackArtist">Artista / Origem: TikTok</p>
+
+          <!-- player opcional (navegadores suportam reprodução local) -->
+          <audio
+            id="preview"
+            controls
+            preload="none"
+            aria-label="Pré-escuta da faixa"
+          >
+            <!-- Substitua musica.mp3 pelo nome real do arquivo -->
+            <source src="./Enquanto respirar (speed ).m4a" type="audio/mpeg" />
+            Seu navegador não suporta reprodução de áudio.
+          </audio>
+        </div>
+
+        <div class="cover-art" aria-hidden="true">🎵</div>
+      </section>
+
+      <div class="actions" role="region" aria-label="Ações">
+        <!-- Botão que baixa o arquivo: substitua musica.mp3 pelo arquivo real -->
+        <a
+          class="btn-download"
+          id="downloadBtn"
+          href="./Enquanto respirar (speed ).m4a"
+          download="musica-steeyce.mp3"
+          title="Clique para baixar a música"
+        >
+          ⤓ Baixar música
+        </a>
+
+        <a
+          class="btn-secondary"
+          id="playBtn"
+          href="#"
+          onclick="document.getElementById('preview').play(); return false;"
+          >▶ Tocar</a
+        >
+        <a
+          class="btn-secondary"
+          id="pauseBtn"
+          href="#"
+          onclick="document.getElementById('preview').pause(); return false;"
+          >⏸ Pausar</a
+        >
+      </div>
+    </main>
+
+    <script>
+      // pequenos toques JS para UX (opcional)
+      (function () {
+        const downloadBtn = document.getElementById("downloadBtn");
+        const preview = document.getElementById("preview");
+
+        // avisar se o arquivo não existir (não é possível verificar cross-origin em todos os casos)
+        downloadBtn.addEventListener("click", function () {
+          // nada crítico aqui, o atributo download fará o trabalho quando o arquivo existir
+          // você pode personalizar o nome final em download="nome.mp3"
+        });
+
+        // Atualização visual simples: quando acabar a pré-escuta voltar ao início
+        preview.addEventListener("ended", () => (preview.currentTime = 0));
+      })();
+    </script>
+  </body>
+</html>
